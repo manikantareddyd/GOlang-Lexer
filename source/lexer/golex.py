@@ -6,17 +6,6 @@
 # ------------------------------------------------------------
 import ply.lex as lex
 
-# A string containing ignored characters (spaces and tabs)
-t_ignore  = ' \t'
-
-# Error handling rule
-def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
-    t.lexer.skip(1)
-
-t_ignore_COMMENT = r'(?://[^\n]*|/\*(?:(?!\*/).)*\*/)'
-
-
 #These are a set of reserved tokens in GO, NOT to be used as keywords
 reserved = {
         'break':'BREAK',
@@ -150,10 +139,16 @@ t_COLON   = r'\:'
 
 
 
+# A string containing ignored characters (spaces and tabs)
+t_ignore  = ' \t'
+
+t_ignore_COMMENT = r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
+
 def t_IDENTIFIER(t):
         r'[a-zA-Z_][a-zA-Z_0-9]*'
         t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
         return t
+
 # A regular expression rule with some action code
 def t_NUMBER(t):
     r'\d+'
@@ -165,5 +160,14 @@ def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
+
+# Error handling rule
+def t_error(t):
+    print("Illegal character '%s'" % t.value[0])
+    t.lexer.skip(1)
+
 # Build the lexer
 lexer = lex.lex()
+code="3+5 interface go if 2+3=5 then return //ghgh \n rtdfghj /*dfx \n gcv*/ \n $rt "
+
+lexer.input(code)
