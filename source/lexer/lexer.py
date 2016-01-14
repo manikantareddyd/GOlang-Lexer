@@ -1,7 +1,7 @@
 import sys
 import ply.lex as lex
-from opreg import *
 from regexes import *
+
 
 #Scanning the file name
 if (len(sys.argv) == 1):

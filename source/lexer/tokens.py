@@ -31,6 +31,7 @@ reserved = {
 tokens = [
         'MINUS',
         'INTEGER',
+        'FLOAT',
         'PLUS',
         'CHAR',
         'STRING',
