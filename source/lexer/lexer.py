@@ -15,8 +15,9 @@ try:
         data = fp.read()
         data += '\n'
         lexer.input(data)
+        print '\n'
        	for tok in lexer:
-       		print tok
+       		print tok.type, tok.value
             
 except IOError as e:
     print "I/O error({0}): "+ "We are not able to open " + file_name + " . Does it Exists? Check permissionsi!"

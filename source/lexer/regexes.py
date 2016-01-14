@@ -1,8 +1,11 @@
 from tokens import *
 #These are a set of reserved tokens in GO, NOT to be used as keywords
 
+# A string containing ignored characters (spaces and tabs)
+t_ignore  = ' \t'
 
-
+# How to ignore comments? Its done this way
+t_ignore_COMMENT = r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
 
 #This is just a list of all operators in GO! LOL too many
 t_PLUS    = r'\+'
@@ -51,40 +54,43 @@ t_RBRACE  = r'\}'
 t_COMMA   = r'\,'
 t_DOT     = r'\.'
 t_SEMICOL = r'\;'
-t_COLON   = r'\:'  
+t_COLON   = r'\:'
 
+#The Other Stuff in GO  
 
-# Regular expression rules for simple tokens
+#those types :P
+def t_TYPE(t):
+    r'int|float|char|string|bool|int\*|float\*|char\*|string\*'
+    return t
 
-# A string containing ignored characters (spaces and tabs)
-t_ignore  = ' \t'
+# char in tokens
+def t_CHAR(t):
+    r'\'.\''
+    return t
 
-# Comments
-t_ignore_COMMENT = r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
+# Strings in quotes
+def t_STRING(t):
+    r'\'.*\''
+    return t
 
 #Identifier token for names and variables
 def t_IDENTIFIER(t):
-        r'[a-zA-Z_][a-zA-Z_0-9]*'
-        t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
-        return t
+    r'[a-zA-Z_][a-zA-Z_0-9]*'
+    t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
+    return t
 
+# The almighty float
 def t_FLOAT(t):
     r'(([0-9](_?[0-9]+)*(\.[0-9](_?[0-9]+)*)?)[eE]\-[0-9](_?[0-9]+)*)|([0-9](_?[0-9]+)*\.[0-9](_?[0-9]+)*)([eE][\+]?[0-9](_?[0-9]+)*)?'
     t.value = float(t.value.replace("_",""))
     return t
 
+# -
 def t_INTEGER(t):
     r'[0-9](_?[0-9]+)*([Ee](\+)?[0-9](_?[0-9]+)*)?'
     t.value = int(float(t.value.replace("_","")))   
     return t
 
-def t_CHAR(t):
-    r'\'.\''  
-    return t
-
-def t_STRING(t):
-    r'\'.*\''
-    return t
 # Define a rule so we can track line numbersg
 def t_newline(t):
     r'\n+'
