@@ -14,9 +14,13 @@ def t_IDENTIFIER(t):
         t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
         return t
 
-def t_NUMBER(t):
-    r'\d+'
-    t.value = int(t.value)    
+def t_INTEGER(t):
+    r'[0-9](_?[0-9]+)*([Ee](\+)?[0-9](_?[0-9]+)*)?'
+    t.value = int(float(t.value.replace("_","")))   
+    return t
+
+def t_CHAR(t):
+    r'\'.\''  
     return t
 
 # Define a rule so we can track line numbers
