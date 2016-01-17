@@ -66,11 +66,13 @@ def t_TYPE(t):
 # char in tokens
 def t_CHAR(t):
     r'\'.\''
+    t.value=t.value[1:len(t.value)-1]
     return t
 
 # Strings in quotes
 def t_STRING(t):
     r'\'.*\' | \".*\"'
+    t.value=t.value[1:len(t.value)-1]
     return t
 
 #Identifier token for names and variables

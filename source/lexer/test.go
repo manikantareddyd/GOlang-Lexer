@@ -19,11 +19,11 @@ int 20
 return
 var a=100
 if temp==2:
-    print 'What the fuck?\n'
+    print 'What the fuck?'
     else:
     print "no fucking ida?"
     switch jasld;fj.asjdf.lasjdf.:
     print test
     but id dont
     asdlfsdfk;lajdf
-45646.45646.564.4654
+45646.56

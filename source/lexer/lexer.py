@@ -21,16 +21,16 @@ try:
         print '\n'
         NoOfTok=0
         for tok in lexer:
-            lis = Toks[tok.type]
-            lis[1]=lis[1]+1
-            lis.append(tok.value)
-            Toks[tok.type]=lis
-              
+            Toks[tok.type][1]=Toks[tok.type][1]+1
+            Toks[tok.type].append(tok.value)
+
        	for x in Toks:
-            lis=Toks[x]
-            if lis[1]!=0 :
-                print lis[0],lis[1],lis[2:]
+            if Toks[x][1]!=0 :
+                print Toks[x][0],"\n\t",Toks[x][1],"\t",Toks[x][2]
+                for i in range(3,len(Toks[x])):
+                    print "\t\t",Toks[x][i]
 
         print 'Illegal list',ERROR_LIST
+
 except IOError as e:
     print "I/O error({0}): "+ "We are not able to open " + file_name + " . Does it Exists? Check permissionsi!"
