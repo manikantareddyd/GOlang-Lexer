@@ -26,11 +26,15 @@ try:
 
        	for x in Toks:
             if Toks[x][1]!=0 :
+                print "-"*24
                 print Toks[x][0],"\n\t",Toks[x][1],"\t",Toks[x][2]
                 for i in range(3,len(Toks[x])):
                     print "\t\t",Toks[x][i]
 
-        print 'Illegal list',ERROR_LIST
+        print "-"*24,'\nIllegal list'
+        for i in range(0,len(ERROR_LIST)):
+            print ERROR_LIST[i]+"\t",
+        print "\n","-"*24
 
 except IOError as e:
     print "I/O error({0}): "+ "We are not able to open " + file_name + " . Does it Exists? Check permissionsi!"
