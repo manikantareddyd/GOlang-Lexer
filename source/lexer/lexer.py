@@ -31,5 +31,6 @@ try:
             if lis[1]!=0 :
                 print lis[0],lis[1],lis[2:]
 
+        print 'Illegal list',ERROR_LIST
 except IOError as e:
     print "I/O error({0}): "+ "We are not able to open " + file_name + " . Does it Exists? Check permissionsi!"

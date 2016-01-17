@@ -70,7 +70,7 @@ def t_CHAR(t):
 
 # Strings in quotes
 def t_STRING(t):
-    r'\'.*\''
+    r'\'.*\' | \".*\"'
     return t
 
 #Identifier token for names and variables
@@ -96,7 +96,9 @@ def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
+ERROR_LIST=[]
 # Error handling rule
 def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
+    #print("Illegal character '%s'" % t.value[0])
+    ERROR_LIST.append(t.value[0])
     t.lexer.skip(1)
