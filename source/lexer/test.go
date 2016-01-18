@@ -16,6 +16,12 @@ x=-30
 8+i8
 int 20
 -90.7
+a *int
+b **int
+c * * * int
+INTERFACE
+interface
+float b
 return
 var a=100
 if temp==2:
@@ -27,3 +33,8 @@ if temp==2:
     but id dont
     asdlfsdfk;lajdf
 45646.56
+}
+{
+    
+}
+* float

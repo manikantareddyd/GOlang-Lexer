@@ -33,7 +33,6 @@ tokens = [
         'INTEGER',
         'FLOAT',
         'PLUS',
-        'CHAR',
         'STRING',
         'TIMES',
         'DIVIDE',

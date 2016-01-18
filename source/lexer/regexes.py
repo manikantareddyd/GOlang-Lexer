@@ -60,14 +60,10 @@ t_COLON   = r'\:'
 
 #those types :P
 def t_TYPE(t):
-    r'int|float|char|string|bool|int\*|float\*|char\*|string\*'
+    r'(bool|((\*)|\ )*int|((\*)|\ )*float|((\*)|\ )*string)'
+    t.value=t.value.replace(" ","")
     return t
 
-# char in tokens
-def t_CHAR(t):
-    r'\'.\''
-    t.value=t.value[1:len(t.value)-1]
-    return t
 
 # Strings in quotes
 def t_STRING(t):
