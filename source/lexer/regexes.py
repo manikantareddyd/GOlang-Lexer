@@ -58,13 +58,6 @@ t_COLON   = r'\:'
 
 #The Other Stuff in GO  
 
-#those types :P
-def t_TYPE(t):
-    r'(bool|((\*)|\ )*int|((\*)|\ )*float|((\*)|\ )*string)'
-    t.value=t.value.replace(" ","")
-    return t
-
-
 # Strings in quotes
 def t_STRING(t):
     r'\'.*\' | \".*\"'
@@ -75,6 +68,12 @@ def t_STRING(t):
 def t_IDENTIFIER(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
+    return t
+
+#those types :P
+def t_TYPE(t):
+    r'(bool|((\*)|\ )*int|((\*)|\ )*float|((\*)|\ )*string)'
+    t.value=t.value.replace(" ","")
     return t
 
 # The almighty float
