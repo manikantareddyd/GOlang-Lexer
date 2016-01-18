@@ -82,6 +82,8 @@ def t_IDENTIFIER(t):
     t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
     return t
 
+
+
 # The almighty float
 def t_FLOAT(t):
     r'(([0-9](_?[0-9]+)*(\.[0-9](_?[0-9]+)*)?)[eE]\-[0-9](_?[0-9]+)*)|([0-9](_?[0-9]+)*\.[0-9](_?[0-9]+)*)([eE][\+]?[0-9](_?[0-9]+)*)?'

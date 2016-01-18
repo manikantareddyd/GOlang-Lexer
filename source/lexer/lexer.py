@@ -18,8 +18,7 @@ try:
         data = fp.read()
         data += '\n'
         lexer.input(data)
-        print '\n'
-        NoOfTok=0
+        print "Tokens    Occurances   Lexemes"
         for tok in lexer:
             Toks[tok.type][1]=Toks[tok.type][1]+1
             if tok.value in Toks[tok.type]: continue
@@ -27,15 +26,15 @@ try:
 
        	for x in Toks:
             if Toks[x][1]!=0 :
-                print "-"*32
-                print Toks[x][0],"\n\t",Toks[x][1],"\t",Toks[x][2]
+                print "-"*40
+                print Toks[x][0],"\n\t\t\t\t",Toks[x][1],"\t\t",Toks[x][2]
                 for i in range(3,len(Toks[x])):
-                    print "\t\t",Toks[x][i]
+                    print "\t\t\t\t\t\t",Toks[x][i]
 
-        print "-"*32,'\nIllegal list'
+        print "-"*40,'\nIllegal list'
         for i in range(0,len(ERROR_LIST)):
             print ERROR_LIST[i]+"\t",
-        print "\n","-"*32
+        print "\n","-"*40
 
 except IOError as e:
     print "I/O error({0}): "+ "We are not able to open " + file_name + " . Does it Exists? Check permissionsi!"
