@@ -16,35 +16,35 @@ t_MOD     = r'%'
 t_AMPERS  = r'&'
 t_OR 	  = r'\|'
 t_CARET   = r'\^'
-t_LL      = r'<<'
-t_GG	  = r'>>'
+t_LL      = r'(<<)'
+t_GG	  = r'(>>)'
 t_AMPCAR  = r'&\^'
-t_PLUSEQ  = r'\+='
-t_MINUSEQ = r'-='
-t_TIMESEQ = r'\*='
+t_PLUSEQ  = r'(\+=)'
+t_MINUSEQ = r'(-=)'
+t_TIMESEQ = r'(\*=)'
 t_DIVIDEEQ= r'/='
-t_MODEQ   = r'%='
-t_AMPEQ   = r'&='
-t_OREQ    = r'\|='
-t_CAREQ   = r'\^='
-t_LLEQ    = r'<<='
-t_GGEQ    = r'>>='
-t_AMPCAREQ= r'&\^='
-t_AMPAMP  = r'&&'
-t_OROR    = r'\|\|'
-t_LMINUS  = r'<-'
-t_PLUSPLUS= r'\+\+'
-t_MINUSMIN= r'--'
-t_EQEQ    = r'=='
+t_MODEQ   = r'(%=)'
+t_AMPEQ   = r'(&=)'
+t_OREQ    = r'(\|=)'
+t_CAREQ   = r'(\^=)'
+t_LLEQ    = r'(<<=)'
+t_GGEQ    = r'(>>=)'
+t_AMPCAREQ= r'(&\^=)'
+t_AMPAMP  = r'(&&)'
+t_OROR    = r'(\|\|)'
+t_LMINUS  = r'(<-)'
+t_PLUSPLUS= r'(\+\+)'
+t_MINUSMIN= r'(--)'
+t_EQEQ    = r'(==)'
 t_LESS    = r'<'
 t_GREAT   = r'>'
 t_EQUAL   = r'='
 t_NOT     = r'!'
-t_NOTEQ   = r'!='
-t_LEQ     = r'<='
-t_GEQ     = r'>='
-t_COLONEQ = r':='
-t_DDD	  = r'\.\.\.'
+t_NOTEQ   = r'(!=)'
+t_LEQ     = r'(<=)'
+t_GEQ     = r'(>=)'
+t_COLONEQ = r'(:=)'
+t_DDD	  = r'(\.\.\.)'
 t_LPAREN  = r'\('
 t_RPAREN  = r'\)'
 t_LBRACK  = r'\['
@@ -55,7 +55,6 @@ t_COMMA   = r'\,'
 t_DOT     = r'\.'
 t_SEMICOL = r'\;'
 t_COLON   = r'\:'
-
 #The Other Stuff in GO  
 
 # Strings in quotes
@@ -64,16 +63,23 @@ def t_STRING(t):
     t.value=t.value[1:len(t.value)-1]
     return t
 
-#Identifier token for names and variables
-def t_IDENTIFIER(t):
-    r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
+# This particular Keyword Screwed us a lot. So It so happens PLY doesn't 
+# peform maximal match among definition functions, 
+# it matches them sequentially
+def t_INTERFACE(t):
+    r'interface'
     return t
 
 #those types :P
 def t_TYPE(t):
-    r'(bool|((\*)|\ )*int|((\*)|\ )*float|((\*)|\ )*string)'
+    r'(((\*)|\ )*int|((\*)|\ )*float|((\*)|\ )*string)'
     t.value=t.value.replace(" ","")
+    return t
+
+#Identifier token for names and variables
+def t_IDENTIFIER(t):
+    r'[a-zA-Z_][a-zA-Z_0-9]*'
+    t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
     return t
 
 # The almighty float

@@ -9,6 +9,8 @@ S='H'
 A='dfffdd'
 /* kyghjb
 jh*/
+<=
+>>=
 memsahab
 x=-30
 45-30
@@ -35,7 +37,13 @@ if temp==2:
 45646.56
 }
 {
-
+>>=
++=
+-=
 }
 * float
 //LOL LOL
+:=
+: =
+<<
+>>

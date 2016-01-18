@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import sys
 import ply.lex as lex
 from regexes import *
