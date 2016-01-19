@@ -62,7 +62,7 @@ t_COLON   = r'\:'
 def t_STRING(t):
     r'(\"[^(\")]*\")|(\'[^(\')]*\') '
     #r'\'.*\' | \".*\"'
-    t.value=t.value[1:len(t.value)-1]
+    t.value=t.value[1:-1]
     return t
 
 # This particular Keyword Screwed us a lot. So It so happens PLY doesn't 
