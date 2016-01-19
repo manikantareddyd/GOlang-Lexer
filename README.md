@@ -19,7 +19,15 @@ This will generate tabulated output to STDOUT
 The table contains 3 columns (TOKEN.name | OCCURANCES | TOKEN.Value)
 
 
-	+ Identical tokens of same kind will be clubbed together
++ Identical tokens of same kind will be clubbed together
+
+
+Project group
+=============
+ + Akash Waghela        (13064)
+ + Manikanta Reddy D    (13265)
+ + Parag Bansal         (13464)
+ + Shubham Agrawal      (13674)
 
 Reading
 ========
