@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'../ply/')
+sys.path.insert(0,'./ply')
 import ply.lex as lex
 from regexes import *
 
