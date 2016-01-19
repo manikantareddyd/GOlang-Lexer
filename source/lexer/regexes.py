@@ -6,8 +6,8 @@ from tokens import *
 t_ignore  = ' \t'
 
 # How to ignore comments? Its done this way
-t_ignore_COMMENT =   r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
-#r'/\* [^(\*/)]* \*/ '
+t_ignore_COMMENT = r'(/\*([^*]|\n|(\*+([^*/]|\n])))*\*+/)|(//.*)'
+#r'/\* [^(\*/)]* \*/ '  #
 #This is just a list of all operators in GO! LOL too many
 t_PLUS    = r'\+'
 t_MINUS   = r'-'
@@ -62,7 +62,7 @@ t_COLON   = r'\:'
 def t_STRING(t):
     r'(\"[^(\")]*\")|(\'[^(\')]*\') '
     #r'\'.*\' | \".*\"'
-    t.value=t.value[1:-1]
+    t.value=t.value[1:-1].replace("\'","\"")
     return t
 
 # This particular Keyword Screwed us a lot. So It so happens PLY doesn't 

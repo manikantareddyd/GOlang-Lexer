@@ -10,11 +10,19 @@ S="H"
 A="dfffdd"
 /* kyghjb
 fhkdfjkdjflj
+/* heloo
 jfdjslfj
 jh*/
 /*
+ji
+*
+/
+jo
 */
 <=
+/**\
+bdsh
+***/
 >>=
 memsahab
 x=-30
@@ -33,15 +41,12 @@ float b
 return
 var a=100
 if temp==2:
-   print "What 'the' fuck?" + f + "the int of" + "kantq is awe
+   print "What 'the' \fuck?" + f + "the int of" + "kantq is awe
     +
     some" + g
     else:
     print "no fucking ida?"
-    switch jasld;fj.asjdf.lasjdf.:
-    print test
-    but id dont
-    asdlfsdfk;lajdf
+    
 45646.56
 }
 {
