@@ -1,3 +1,4 @@
+
 from tokens import *
 #These are a set of reserved tokens in GO, NOT to be used as keywords
 
@@ -5,8 +6,8 @@ from tokens import *
 t_ignore  = ' \t'
 
 # How to ignore comments? Its done this way
-t_ignore_COMMENT = r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
-
+t_ignore_COMMENT =   r'(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)'
+#r'/\* [^(\*/)]* \*/ '
 #This is just a list of all operators in GO! LOL too many
 t_PLUS    = r'\+'
 t_MINUS   = r'-'
@@ -59,7 +60,8 @@ t_COLON   = r'\:'
 
 # Strings in quotes
 def t_STRING(t):
-    r'\'.*\' | \".*\"'
+    r'(\"[^(\")]*\")|(\'[^(\')]*\') '
+    #r'\'.*\' | \".*\"'
     t.value=t.value[1:len(t.value)-1]
     return t
 
@@ -81,8 +83,6 @@ def t_IDENTIFIER(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value,'IDENTIFIER')    # Check for reserved words
     return t
-
-
 
 # The almighty float
 def t_FLOAT(t):

@@ -4,11 +4,16 @@
     3)
 222
 Hi+90
+..
 ---
-S='H'
-A='dfffdd'
+S="H"
+A="dfffdd"
 /* kyghjb
+fhkdfjkdjflj
+jfdjslfj
 jh*/
+/*
+*/
 <=
 >>=
 memsahab
@@ -23,11 +28,14 @@ b **int
 c * * * int
 INTERFACE
 interface
+'heoll'
 float b
 return
 var a=100
 if temp==2:
-    print 'What the fuck?'
+   print "What 'the' fuck?" + f + "the int of" + "kantq is awe
+    +
+    some" + g
     else:
     print "no fucking ida?"
     switch jasld;fj.asjdf.lasjdf.:
@@ -42,8 +50,8 @@ if temp==2:
 -=
 }
 * float
-//LOL LOL
 :=
 : =
 <<
 >>
+...

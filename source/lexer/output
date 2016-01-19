@@ -28,7 +28,7 @@ MINUS
 				4 		-
 ----------------------------------------
 DOT 
-				4 		.
+				6 		.
 ----------------------------------------
 RPAREN 
 				3 		)
@@ -43,7 +43,7 @@ SWITCH
 				1 		switch
 ----------------------------------------
 PLUS 
-				2 		+
+				6 		+
 ----------------------------------------
 INTEGER 
 				12 		222
@@ -56,7 +56,7 @@ INTEGER
 						2
 ----------------------------------------
 IDENTIFIER 
-				40 		Things
+				42 		Things
 						to
 						be
 						done
@@ -81,6 +81,8 @@ IDENTIFIER
 						INTERFACE
 						temp
 						print
+						f
+						g
 						jasld
 						fj
 						asjdf
@@ -93,9 +95,14 @@ IDENTIFIER
 						lajdf
 ----------------------------------------
 STRING 
-				4 		H
+				7 		H
 						dfffdd
-						What the fuck?
+						heoll
+						What 'the' fuck?
+						the int of
+						kantq is awe
+    +
+    some
 						no fucking ida?
 ----------------------------------------
 RBRACE 
@@ -112,6 +119,9 @@ MINUSMIN
 ----------------------------------------
 ELSE 
 				1 		else
+----------------------------------------
+DDD 
+				1 		...
 ----------------------------------------
 LBRACE 
 				1 		{
