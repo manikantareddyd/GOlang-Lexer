@@ -1,21 +1,25 @@
 
 
-This repository is built for the purpose of buiding a compier for Go Language to x86 implemented in python.
-There is no necessity of installation of any GO related compilers
-You need a working instance of python only
+Lexer for tokenizing GO Lang programmes - An implementation in python
+
+The lexer requires  a execuatble instance of python2.7 in /usr/bin 
 
 
-NOTE:
-======
- + 1. Install ply as follows
+Building
+=========
+run make to build the bin directory
 
-	sudo pip install ply
+	make
 
- + 2. The folder ply_src currently contains source of lexer tools implemented in python
+to run the program set the working directory to assgn1 and execute lexer
 
- + 3. source contains the work in progress
+	./bin/lexer ./test/test3.go
 
-:)
+This will generate tabulated output to STDOUT
+The table contains 3 columns (TOKEN.name | OCCURANCES | TOKEN.Value)
+
+
+	+ Identical tokens of same kind will be clubbed together
 
 Reading
 ========
